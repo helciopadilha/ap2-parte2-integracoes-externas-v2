@@ -1,0 +1,6 @@
+# Ignorar node_modules e arquivos desnecessários
+node_modules/
+.env
+.env.example
+npm-debug.log
+yarn-error.log
