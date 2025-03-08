@@ -3,11 +3,15 @@ const express = require('express');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
 const verifyJWT = require('./middlewares/verifyJWT');
+const swaggerDocs = require('./swaggerConfig');
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
+
+// Integrando Swagger
+swaggerDocs(app);
 
 // Rota pública
 app.get('/', (req, res) => {
@@ -25,9 +29,4 @@ app.get('/users', verifyJWT, (req, res) => {
 // Rotas de autenticação
 app.use('/auth', authRoutes);
 
-// Única declaração da porta
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
-});
+module.exports = app; // Exporta o app para os testes

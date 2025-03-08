@@ -4,10 +4,16 @@
   "description": "API REST com autenticação JWT em Node.js",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
-  },
-  "keywords": ["jwt", "api", "express", "node"],
+  "start": "node src/server.js",
+  "dev": "nodemon src/server.js",
+  "test": "jest"
+},
+  "keywords": [
+    "jwt",
+    "api",
+    "express",
+    "node"
+  ],
   "author": "Seu Nome",
   "license": "ISC",
   "dependencies": {
@@ -15,9 +21,13 @@
     "cors": "^2.8.5",
     "dotenv-safe": "^9.1.0",
     "express": "^4.21.2",
-    "jsonwebtoken": "^9.0.2"
+    "jsonwebtoken": "^9.0.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
-    "nodemon": "^3.0.3"
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.3",
+    "supertest": "^7.0.0"
   }
 }
